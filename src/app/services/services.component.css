@@ -1,0 +1,24 @@
+
+.border-right{
+  border-right: 1px solid rgba(253, 252, 252, 0.952) !important;
+}
+
+a{
+  color:white;
+}
+a:hover{
+  color: #186cbb;
+}
+
+.text-center {
+color: white;
+
+}
+
+.form-group {
+
+  color: #186cbb;
+  font: bold;
+}
+
+

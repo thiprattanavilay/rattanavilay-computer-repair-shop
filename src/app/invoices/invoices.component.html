@@ -1,0 +1,51 @@
+<div class="container">
+  {{date}}
+  <br><br><br>
+  <h2 mat-dialog-title>INVOICE</h2>
+  <mat-dialog-content class="invoiceStyle">
+    <div *ngIf="invoicesOrder.getPasswordResetInfo().checked">
+      <h4>{{ invoicesOrder.getPasswordResetInfo().name }}</h4>
+      <p>{{ invoicesOrder.getPasswordResetInfo().price | currency }}</p>
+    </div>
+    <div *ngIf="invoicesOrder.getSpywareRemovalInfo().checked">
+      <h4>{{ invoicesOrder.getSpywareRemovalInfo().name }}</h4>
+      <p>{{ invoicesOrder.getSpywareRemovalInfo().price | currency }}</p>
+    </div>
+    <div *ngIf="invoicesOrder.getRamUpgradeInfo().checked">
+      <h4>{{ invoicesOrder.getRamUpgradeInfo().name }}</h4>
+      <p>{{ invoicesOrder.getRamUpgradeInfo().price | currency }}</p>
+    </div>
+    <div *ngIf="invoicesOrder.getSoftwareInstallationInfo().checked">
+      <h4>{{ invoicesOrder.getSoftwareInstallationInfo().name }}</h4>
+      <p>{{ invoicesOrder.getSoftwareInstallationInfo().price | currency }}</p>
+    </div>
+    <div *ngIf="invoicesOrder.getTuneUpInfo().checked">
+      <h4>{{ invoicesOrder.getTuneUpInfo().name }}</h4>
+      <p>{{ invoicesOrder.getTuneUpInfo().price | currency }}</p>
+    </div>
+    <div *ngIf="invoicesOrder.getKeyboardCleaningInfo().checked">
+      <h4>{{ invoicesOrder.getKeyboardCleaningInfo().name }}</h4>
+      <p>{{ invoicesOrder.getKeyboardCleaningInfo().price | currency }}</p>
+    </div>
+    <div *ngIf="invoicesOrder.getCleanUpInfo().checked">
+      <h4>{{ invoicesOrder.getCleanUpInfo().name }}</h4>
+      <p>{{ invoicesOrder.getCleanUpInfo().price | currency }}</p>
+    </div>
+
+    <div *ngIf="invoicesOrder.getLaborCostInfo().hoursRequested != 0">
+      <p>Hours Requested: {{ invoicesOrder.getLaborCostInfo().hoursRequested }} @{{ invoicesOrder.getLaborCostInfo().rate | currency }} per hour = {{ invoicesOrder.getLaborCostInfo().price | currency }}</p>
+    </div>
+
+    <div *ngIf="invoicesOrder.getPartsInfo().partsNeeded != ''">
+      <p>Parts requested: {{ invoicesOrder.getPartsInfo().partsNeeded }}</p>
+    </div>
+    <br />
+    <hr />
+    <h4>Total</h4>
+    <p>{{ invoicesOrder.getTotalCost() | currency }}</p>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button color="warn" (click)="close()">Close</button>
+  </mat-dialog-actions>
+</div>

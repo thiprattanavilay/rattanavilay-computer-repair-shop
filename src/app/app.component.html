@@ -1,0 +1,59 @@
+<mat-toolbar class="menu" role="header" color="white">
+  <mat-toolbar-row>
+
+    <a mat-button class="toolbar__icon-button mat-button" [routerLink]="'/'">
+      <mat-icon>desktop_mac</mat-icon>
+      Bob’s Computer Repair Shop
+      <span style="margin-left: 5px !important;"></span>
+    </a>
+
+    <button mat-button [routerLink]="'/'">
+      <mat-icon>home</mat-icon>
+      Home
+    </button>
+
+    <button mat-button [routerLink]="'/services'">
+      <i class="material-icons">devices</i>
+      Services
+    </button>
+
+    <button mat-button [routerLink]="'/contact'">
+      <i class="material-icons">phone</i>
+      Contact US
+    </button>
+
+    <button mat-button [routerLink]="'about'">
+      <i class="material-icons">contacts</i>
+      About
+    </button>
+
+
+    <div fxFlex></div>
+    Welcome
+    <button class="toolbar__icon-button" [matMenuTriggerFor]="menu" mat-icon-button>
+      <mat-icon>account_circle</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button onclick="document.getElementById('id01').style.display='block'" mat-menu-item [routerLink]="'/account'">
+        <mat-icon>perm_contact_calendar</mat-icon>
+        <span>My Account</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>Settings</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
